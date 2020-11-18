@@ -15,10 +15,10 @@ for x in dx:
         else:
             #  (-2,-1) (-2,1) (2,-1) (2,1) 를 더할 경우
             count += 1
-            print("(", col + x, ",", row + y, ") count=", count)
             if col + y < 1 or col + y > 8 or row + x < 1 or row + x > 8:
                 count += 0
             else:
                 #  (-1,-2) (1,-2) (-1,2) (1,2) 를 더할 경우
                 count += 1
-                print("(", col + y, ",", row + x, ") count=", count)
+
+print(count)
