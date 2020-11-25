@@ -1,28 +1,28 @@
-def turn_left(direction):
-    if direction == 0:
+def turn_left(pd):
+    if pd == 0:
         return 3
     else:
-        return direction - 1
+        return pd - 1
 
 
-def go(direction, pa, pb):
-    if direction == 0:
+def go(pd, pa, pb):
+    if pd == 0:
         pb -= 1
-    elif direction == 1:
+    elif pd == 1:
         pa += 1
-    elif direction == 2:
+    elif pd == 2:
         pb += 1
     else:
         pa -= 1
     return pa, pb
 
 
-def back(direction, pa, pb):
-    if direction == 0:
+def back(pd, pa, pb):
+    if pd == 0:
         pb += 1
-    elif direction == 1:
+    elif pd == 1:
         pa -= 1
-    elif direction == 2:
+    elif pd == 2:
         pb -= 1
     else:
         pa += 1
@@ -64,6 +64,21 @@ print(been_there)
 1 0 0 1
 1 1 0 1
 1 1 1 1
+
+3 3
+1 1 0
+1 1 1
+1 0 0
+1 1 0
+
+5 4
+1 1 0
+1 1 1 1
+1 0 0 1
+1 1 0 1
+1 0 0 1
+1 1 1 1
+
 [의사 코드]
 ori_d = d
 
