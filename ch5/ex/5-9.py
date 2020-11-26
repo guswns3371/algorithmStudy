@@ -2,7 +2,16 @@ from collections import deque
 
 
 def bfs(_graph, start, _visited):
-    print()
+    queue = deque([start])
+    visited[start] = True
+
+    while queue:
+        v = queue.popleft()
+        print(v, end=' ')
+        for i in graph[v]:
+            queue.append(i)
+            visited[i] = True
+
 
 graph = [
     [],
