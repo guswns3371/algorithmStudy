@@ -19,10 +19,13 @@ def bsf(i, j):
         for k in range(4):
             kx = i + dx[k]
             ky = j + dy[k]
+
             if kx < 0 or ky < 0 or kx >= n or ky >= m:
                 continue
+
             if graph[kx][ky] == 0:
                 continue
+
             if graph[kx][ky] == 1:
                 graph[kx][ky] = graph[i][j] + 1
                 queue.append((kx, ky))
@@ -31,8 +34,10 @@ def bsf(i, j):
 
 bsf(0, 0)
 print(graph[n - 1][m - 1])
+
 for _ in graph:
     print(_)
+
 """
 5 6
 101010
