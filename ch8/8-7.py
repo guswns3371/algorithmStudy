@@ -20,6 +20,8 @@ dp_table[3] =
   dp_table[1] + dp_table[2]
   -3
   '''
+# 나의 답안
+# 일반화가 제대로 안된 점화식
 for i in range(3, n + 1):
     for j in range(i):
         dp_table[i] += dp_table[i - j] + dp_table[j]
@@ -39,6 +41,4 @@ for i in range(3, n + 1):
 
 result = dp_table[n] % 796796
 print('<2>', dp_table, result)
-'''
-3
-'''
+
