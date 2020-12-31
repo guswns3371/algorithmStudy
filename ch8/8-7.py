@@ -41,4 +41,3 @@ for i in range(3, n + 1):
 
 result = dp_table[n] % 796796
 print('<2>', dp_table, result)
-
