@@ -14,7 +14,7 @@
 
 ## Pseudo-code
 
-```
+```python
 
 ```
 
