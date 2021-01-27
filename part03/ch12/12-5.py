@@ -43,14 +43,6 @@ def next_head(head, direct):
     return return_head
 
 
-def remove_tail():
-    if snake:
-        snake.pop()
-        return True
-    else:
-        return False
-
-
 def print_snake(snake, board):
     return_board = copy.deepcopy(board)
     return_snake = copy.deepcopy(snake)
@@ -60,8 +52,8 @@ def print_snake(snake, board):
         i, j = return_snake.popleft()
         return_board[i][j] = 2
     return_board[i][j] = 3
-    for i in range(N + 1):
-        for j in range(N + 1):
+    for i in range(1, N + 1):
+        for j in range(1, N + 1):
             if return_board[i][j] == 0:
                 print("□", end=" ")
             elif return_board[i][j] == 1:
@@ -103,6 +95,7 @@ time = 0
 
 print_snake(snake, board)
 print("---------------------------------")
+
 while snake:
     time += 1
     start = snake[0]
@@ -114,16 +107,17 @@ while snake:
         print(new_head)
         break
 
-    # 먼저 머리를 다음칸에 위치시킴
-
+    # 만약 다음칸에 뱀의 몸이 있으면 게임이 끝나게 됨
     if new_head in snake:
         break
+
+    # 머리를 다음칸에 위치시킴
     snake.appendleft(new_head)
     # 사과가 있을 경우
     if board[new_head[0]][new_head[1]] == 1:
         # 사과를 없앤다
         board[new_head[0]][new_head[1]] = 0
-        print("전방에 사과!", end=" ")
+        print("💥!전방에 사과!", end=" ")
     #  사과가 없을 경우
     elif board[new_head[0]][new_head[1]] == 0:
         # 꼬리를 없앤다
@@ -141,7 +135,7 @@ while snake:
             turn.popleft()
             # 이동방향 갱신
             direction = turning_head(c, direction)
-            print(f"턴! {c}")
+            print(f"💥!턴! {c}")
         break
 
 print(time)
