@@ -6,8 +6,8 @@ def bfs_spread_virus(graph, start, visited):
     queue = deque([[x, y]])
 
     while queue:
-        nx, ny = queue.pop()
-        print(nx, ny, "pop")
+        nx, ny = queue.popleft()
+        print(nx, ny, "popleft")
         for d in range(5):
             xx = nx + dx[d]
             yy = ny + dy[d]
@@ -27,21 +27,16 @@ def bfs_spread_virus(graph, start, visited):
                 graph[xx][yy] = 2
                 print("감염", end=",")
 
-            if visited[xx][yy] == 0:
-                queue.append([xx, yy])
-                print("방문!")
-                visited[xx][yy] = 1
-                for a in range(n):
-                    for b in range(m):
-                        print(visited[a][b], end=" ")
-                    print()
+            queue.append([xx, yy])
+            print("방문!")
+            visited[xx][yy] = 1
+
+            print("------------------")
+            for a in range(n):
+                for b in range(m):
+                    print(graph[a][b], end=" ")
                 print()
-            # for a in range(n):
-            #     for b in range(m):
-            #         print(graph[a][b], end=" ")
-            #     print()
-            # print()
-            # print()
+            print("------------------")
 
 
 dx = [0, -1, 1, 0, 0]
@@ -49,7 +44,7 @@ dy = [0, 0, 0, -1, 1]
 n, m = map(int, input().split())
 graph = [[] for _ in range(n)]
 infected = []
-visited = [[0 for _ in range(n)] for _ in range(m)]
+visited = [[0 for _ in range(m)] for _ in range(n)]
 
 for i in range(n):
     graph[i] = (list(map(int, input().split())))
