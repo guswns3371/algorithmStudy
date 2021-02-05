@@ -6,7 +6,7 @@
 
 ## Pseudo-code
 
-```python
+```
 
 ```
 
