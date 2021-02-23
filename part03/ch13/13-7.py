@@ -71,8 +71,7 @@ for _ in range(n):
 # 하루 동안의 인구이동 과정
 move = 0
 keep_going = True
-while keep_going:
-    # 연합 리스트
+while keep_going:    # 연합 리스트
     t_union_list = []
     # 방문체크 리스트
     visited = [[0 for _ in range(n)] for _ in range(n)]
@@ -95,5 +94,6 @@ while keep_going:
     if keep_going:
         move += 1
         print_graph(A)
+
 
 print(move)
