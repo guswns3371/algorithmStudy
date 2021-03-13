@@ -48,6 +48,7 @@ while keep:
     ugly = []
     for i in range(5):  # 1,2,3,4,5 를 못생긴 수에 넣는다.
         ugly.append(i + 1)
+
     for i in range(n * 3):
         n2 = ugly[i] * 2
         n3 = ugly[i] * 3
