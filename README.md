@@ -53,15 +53,17 @@
 * [정수 삼각형](https://www.acmicpc.net/problem/1932) (IOI): ([Python 3.7 코드](/16/2.py) / [C++ 코드](/16/2.cpp) / [Java 코드](/16/2.java))
 * [퇴사](https://www.acmicpc.net/problem/14501) (삼성): ([Python 3.7 코드](/16/3.py) / [C++ 코드](/16/3.cpp) / [Java 코드](/16/3.java))
 * [병사 배치하기](https://www.acmicpc.net/problem/18353) (핵심 유형): ([Python 3.7 코드](/16/4.py) / [C++ 코드](/16/4.cpp) / [Java 코드](/16/4.java))
-* 못생긴 수 (Google 인터뷰 기출): ([Python 3.7 코드](/16/5.py) / [C++ 코드](/16/5.cpp) / [Java 코드](/16/5.java))
-* 편집 거리 (Goldman Sachs 인터뷰 기출): ([Python 3.7 코드](/16/6.py) / [C++ 코드](/16/6.cpp) / [Java 코드](/16/6.java))
+* [못생긴 수](http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=597&sca=99&sfl=wr_subject&stx=%EB%AA%BB%EC%83%9D%EA%B8%B4)
+ (Google 인터뷰 기출): ([Python 3.7 코드](/16/5.py) / [C++ 코드](/16/5.cpp) / [Java 코드](/16/5.java))
+* [편집 거리](http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=1451&sca=99&sfl=wr_subject&stx=%ED%8E%B8%EC%A7%91)
+ (Goldman Sachs 인터뷰 기출): ([Python 3.7 코드](/16/6.py) / [C++ 코드](/16/6.cpp) / [Java 코드](/16/6.java))
 
 #### 17장 최단 경로
 
 * [플로이드](https://www.acmicpc.net/problem/11404) (핵심 유형): ([Python 3.7 코드](/17/1.py) / [C++ 코드](/17/1.cpp) / [Java 코드](/17/1.java))
 * 정확한 순위 (K 대회 기출): ([Python 3.7 코드](/17/2.py) / [C++ 코드](/17/2.cpp) / [Java 코드](/17/2.java))
 * 화성 탐사 (ICPC): ([Python 3.7 코드](/17/3.py) / [C++ 코드](/17/3.cpp) / [Java 코드](/17/3.java))
-* 숨바꼭질 (USACO): ([Python 3.7 코드](/17/4.py) / [C++ 코드](/17/4.cpp) / [Java 코드](/17/4.java))
+* [숨바꼭질](https://www.acmicpc.net/problem/6118) (USACO): ([Python 3.7 코드](/17/4.py) / [C++ 코드](/17/4.cpp) / [Java 코드](/17/4.java))
 
 #### 18장 기타 그래프 이론
 
