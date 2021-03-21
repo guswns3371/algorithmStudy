@@ -19,6 +19,7 @@ def find_chart(graph, start, biggers, others):
             if visited[node] != 1:
                 dist[node] = min(dist[node], dist[now] + 1)
                 q.append([dist[node], node])
+                visited[node] = 1
 
     dist[0] = -1
     for ii in range(1, n + 1):
@@ -37,6 +38,9 @@ while True:
     print(f"{n} {m}")
 
     temp_lst = [i + 1 for i in range(n)]
+
+    # random_array = np.random.randint(1, n, size=(m, 2)).tolist()
+
     random_array = [[]]
     while len(random_array) < m:
         sample_list = random.sample(temp_lst, k=2)
@@ -44,8 +48,8 @@ while True:
             if sorted(sample_list) not in random_array:
                 if sorted(sample_list, reverse=True) not in random_array:
                     random_array.append(sample_list)
-
     random_array.remove([])
+
     for rd in random_array:
         for rrd in rd:
             print(rrd, end=" ")
@@ -101,8 +105,8 @@ while True:
 
     for i in range(n):
         student = i + 1
-        print(f"{student}번 학생 보다 큰 놈들 : {biggers[student]}")
-        print(f"그 이외의 놈들 : {others[student]}")
+        # print(f"{student}번 학생 보다 큰 놈들 : {biggers[student]}")
+        # print(f"그 이외의 놈들 : {others[student]}")
         dunno = len(others[student])
         for other in others[student]:
             if student in biggers[other]:
@@ -110,9 +114,10 @@ while True:
 
         if dunno == 0:
             know += 1
-            print(f"{student} 학생 순위 정확히 앎 🔥")
+            # print(f"{student} 학생 순위 정확히 앎 🔥")
         else:
-            print(f"{student} 학생 순위 모름, 확실치 않은 핵생수={dunno}")
+            # print(f"{student} 학생 순위 모름, 확실치 않은 핵생수={dunno}")
+            pass
 
     print("현준 : ", know)
 
