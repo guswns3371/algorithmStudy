@@ -30,7 +30,7 @@
 * [괄호 변환](https://programmers.co.kr/learn/courses/30/lessons/60058) (카카오): ([Python 3.7 코드](/13/4.py) / [C++ 코드](/13/4.cpp) / [Java 코드](/13/4.java))
 * [연산자 끼워 넣기](https://www.acmicpc.net/problem/14888) (삼성): ([Python 3.7 코드](/13/5.py) / [C++ 코드](/13/5.cpp) / [Java 코드](/13/5.java))
 * [감시 피하기](https://www.acmicpc.net/problem/18428) (핵심 유형): ([Python 3.7 코드](/13/6.py) / [C++ 코드](/13/6.cpp) / [Java 코드](/13/6.java))
-* [인구 이동](https://www.acmicpc.net/problem/16234) (삼성): ([Python 3.7 코드](/13/7.py) / [C++ 코드](/13/7.cpp) / [Java 코드](/13/7.java))
+* 🤬[인구 이동](https://www.acmicpc.net/problem/16234) (삼성): ([Python 3.7 코드](/13/7.py) / [C++ 코드](/13/7.cpp) / [Java 코드](/13/7.java))
 * 🤬[블록 이동하기](https://programmers.co.kr/learn/courses/30/lessons/60063) (카카오): ([Python 3.7 코드](/13/8.py) / [C++ 코드](/13/8.cpp) / [Java 코드](/13/8.java))
 
 #### 14장 정렬
@@ -53,9 +53,9 @@
 * [정수 삼각형](https://www.acmicpc.net/problem/1932) (IOI): ([Python 3.7 코드](/16/2.py) / [C++ 코드](/16/2.cpp) / [Java 코드](/16/2.java))
 * [퇴사](https://www.acmicpc.net/problem/14501) (삼성): ([Python 3.7 코드](/16/3.py) / [C++ 코드](/16/3.cpp) / [Java 코드](/16/3.java))
 * [병사 배치하기](https://www.acmicpc.net/problem/18353) (핵심 유형): ([Python 3.7 코드](/16/4.py) / [C++ 코드](/16/4.cpp) / [Java 코드](/16/4.java))
-* [못생긴 수](http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=597&sca=99&sfl=wr_subject&stx=%EB%AA%BB%EC%83%9D%EA%B8%B4)
+* 🤬[못생긴 수](http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=597&sca=99&sfl=wr_subject&stx=%EB%AA%BB%EC%83%9D%EA%B8%B4)
  (Google 인터뷰 기출): ([Python 3.7 코드](/16/5.py) / [C++ 코드](/16/5.cpp) / [Java 코드](/16/5.java))
-* [편집 거리](http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=1451&sca=99&sfl=wr_subject&stx=%ED%8E%B8%EC%A7%91)
+* 🤬[편집 거리](http://jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=1451&sca=99&sfl=wr_subject&stx=%ED%8E%B8%EC%A7%91)
  (Goldman Sachs 인터뷰 기출): ([Python 3.7 코드](/16/6.py) / [C++ 코드](/16/6.cpp) / [Java 코드](/16/6.java))
 
 #### 17장 최단 경로
