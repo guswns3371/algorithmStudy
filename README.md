@@ -68,8 +68,8 @@
 #### 18장 기타 그래프 이론
 
 * 여행 계획 (핵심 유형): ([Python 3.7 코드](/18/1.py) / [C++ 코드](/18/1.cpp) / [Java 코드](/18/1.java))
-* 탑승구 (CCC): ([Python 3.7 코드](/18/2.py) / [C++ 코드](/18/2.cpp) / [Java 코드](/18/2.java))
-* 어두운 길 (University of Ulm Local Contest): ([Python 3.7 코드](/18/3.py) / [C++ 코드](/18/3.cpp) / [Java 코드](/18/3.java))
+* [탑승구](https://www.acmicpc.net/problem/10775) (CCC): ([Python 3.7 코드](/18/2.py) / [C++ 코드](/18/2.cpp) / [Java 코드](/18/2.java))
+* [어두운 길](https://www.acmicpc.net/problem/6497) (University of Ulm Local Contest): ([Python 3.7 코드](/18/3.py) / [C++ 코드](/18/3.cpp) / [Java 코드](/18/3.java))
 * [행성 터널](https://www.acmicpc.net/problem/2887) (COCI): ([Python 3.7 코드](/18/4.py) / [C++ 코드](/18/4.cpp) / [Java 코드](/18/4.java))
 * [최종 순위](https://www.acmicpc.net/problem/3665) (ICPC): ([Python 3.7 코드](/18/5.py) / [C++ 코드](/18/5.cpp) / [Java 코드](/18/5.java))
 
