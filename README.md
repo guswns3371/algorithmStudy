@@ -67,10 +67,10 @@
 #### 18장 기타 그래프 이론
 
 * 여행 계획 (핵심 유형)
-* [탑승구](https://www.acmicpc.net/problem/10775) (CCC)
+* 🤬[탑승구](https://www.acmicpc.net/problem/10775) (CCC)
 * [어두운 길](https://www.acmicpc.net/problem/6497) (University of Ulm Local Contest)
 * [행성 터널](https://www.acmicpc.net/problem/2887) (COCI)
-* [최종 순위](https://www.acmicpc.net/problem/3665) (ICPC):
+* 🤬[최종 순위](https://www.acmicpc.net/problem/3665) (ICPC):
 
 #### 19장 2020년 상반기 삼성전자 기출문제
 

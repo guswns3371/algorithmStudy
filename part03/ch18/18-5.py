@@ -2,6 +2,9 @@ from collections import deque
 
 answer = []
 for _ in range(int(input())):
+    idk = False
+    impossible = False
+    result = ""
 
     n = int(input())
     last_year = list(map(int, input().split()))
@@ -14,8 +17,9 @@ for _ in range(int(input())):
     for i in range(1, n + 1):
         temp = last_year[i - 1:]
         temp.pop(0)
+
         graph[last_year[i - 1]] = temp
-        in_degree[last_year[i - 1]] = n - len(temp) - 1
+        in_degree[last_year[i - 1]] = i-1
 
     # 등수가 바뀐 팀의 쌍 입력받기
     for _ in range(int(input())):
@@ -24,32 +28,27 @@ for _ in range(int(input())):
     # 바뀐 등수 적용하기
     for two_team in two_teams:
         a, b = two_team
-        if graph[b].__contains__(a):
+        if a in graph[b]:
             graph[b].remove(a)
             graph[a].append(b)
 
-            in_degree[a] += 1
-            in_degree[b] -= 1
-        else:
-            graph[a].remove(b)
-            graph[b].append(a)
-
             in_degree[a] -= 1
             in_degree[b] += 1
+        else:
+            impossible = True
+            break
+
+    if impossible:
+        answer.append("IMPOSSIBLE")
+        continue
 
     # 위상 정렬
     q = deque()
-    zero_degree = -1
     for i in range(n):
         if in_degree[last_year[i]] == 0:
-            zero_degree = last_year[i]
+            q.append(last_year[i])
             break
 
-    q.append(zero_degree)
-
-    idk = False
-    impossible = False
-    result = ""
     while q:
         if len(q) >= 2:
             idk = True
