@@ -26,13 +26,13 @@ for _ in range(n):
     x, y, z = map(int, input().split())
     nodes.append((x, y, z))
 
-for i in range(n - 1):
-    for j in range(i + 1, n):
-        edges.append((calculate_cost(nodes[i], nodes[j]), i, j))
-
 parent = [0] * (n + 1)
 for i in range(1, n + 1):
     parent[i] = i
+
+for i in range(n - 1):
+    for j in range(i + 1, n):
+        edges.append((calculate_cost(nodes[i], nodes[j]), i, j))
 
 edges.sort()
 
