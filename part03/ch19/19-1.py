@@ -27,7 +27,8 @@ def get_distance(shark_loc, fish_loc, p_visited):  # bfs
             p_visited[xx][yy] = 1
             q.append([ndist + 1, xx, yy])
 
-    return -1 # 최단 거리를 구할 수 없는 경우
+    return -1  # 최단 거리를 구할 수 없는 경우
+
 
 n = int(input())
 dx = [0, 0, 1, -1]
@@ -53,7 +54,6 @@ for x in range(n):
             fishes.append([x, y])  # 물고기 위치
             num_fish += 1
 
-impossible = False
 while fishes:
     neighbor_fish = []
 
@@ -62,13 +62,8 @@ while fishes:
         if graph[fx][fy] < shark_size:  # 먹을 수 있는 물고기인 경우
             visited = [[0 for _ in range(n)] for _ in range(n)]
             dist = get_distance(shark, [fx, fy], visited)
-            if dist == -1:
-                impossible = True
-                break
-            neighbor_fish.append([dist, [fx, fy]])  # 물고기까지 거리, 물고기 위치
-
-    if impossible:
-        break
+            if dist != -1:
+                neighbor_fish.append([dist, [fx, fy]])  # 물고기까지 거리, 물고기 위치
 
     if len(neighbor_fish) == 0:  # 먹을 수 있는 물고기가 없으면 gg
         break
