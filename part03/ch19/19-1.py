@@ -1,13 +1,45 @@
 from collections import deque
 
+
+def get_distance(shark_loc, fish_loc, p_visited):  # bfs
+    kx, ky = shark_loc
+    fx, fy = fish_loc
+
+    q = deque([[0, kx, ky]])
+    p_visited[kx][ky] = 1
+
+    while q:
+        ndist, nx, ny = q.popleft()
+        if nx == fx and ny == fy:
+            return ndist
+
+        for i in range(4):
+            xx = nx + dx[i]
+            yy = ny + dy[i]
+
+            if xx < 0 or yy < 0 or xx >= n or yy >= n:
+                continue
+            if p_visited[xx][yy] == 1:
+                continue
+            if graph[xx][yy] > shark_size:  # 아기상어 크기보다 큰 물고기가 있는 칸은 지나갈 수 없다
+                continue
+
+            p_visited[xx][yy] = 1
+            q.append([ndist + 1, xx, yy])
+
+    return -1 # 최단 거리를 구할 수 없는 경우
+
 n = int(input())
 dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
-# visited = [[0 for _ in range(n)] for _ in range(n)]
+
 graph = []
 shark = []
-fishes = 0  # 물고기 개수
-ate_fishes = 0  # 먹은 물고기 개수
+fishes = []
+
+shark_size = 2
+num_fish = 0
+num_ate = 0
 time = 0
 
 for _ in range(n):
@@ -16,46 +48,50 @@ for _ in range(n):
 for x in range(n):
     for y in range(n):
         if graph[x][y] == 9:
-            shark = [2, 0, x, y]  # 아기 상어 크기, 지난 칸의 개수,위치
+            shark = [x, y]  # 아기 상어 위치
         elif graph[x][y] != 0:
-            fishes += 1  # 물고기 크기, 위치
+            fishes.append([x, y])  # 물고기 위치
+            num_fish += 1
 
+impossible = False
+while fishes:
+    neighbor_fish = []
 
-def bfs(p_shark):
-    global time, ate_fishes, fishes
-    q = deque(p_shark)
+    for fish in fishes:  # 먹을 수 있는 물고기를 찾는다
+        fx, fy = fish
+        if graph[fx][fy] < shark_size:  # 먹을 수 있는 물고기인 경우
+            visited = [[0 for _ in range(n)] for _ in range(n)]
+            dist = get_distance(shark, [fx, fy], visited)
+            if dist == -1:
+                impossible = True
+                break
+            neighbor_fish.append([dist, [fx, fy]])  # 물고기까지 거리, 물고기 위치
 
-    while q:
-        ksize, kcell, kx, ky = q.popleft()
-        neigbor_fish = []  # 먹을 수 있는 주변 물고기 리스트
+    if impossible:
+        break
 
-        for i in range(4):
-            xx = kx + dx[i]
-            yy = ky + dy[i]
+    if len(neighbor_fish) == 0:  # 먹을 수 있는 물고기가 없으면 gg
+        break
 
-            if xx < 0 or yy < 0 or xx >= n or yy >= n:
-                continue
+    neighbor_fish.sort()  # 거리 순으로 정렬, x순으로 정렬, y순으로 정렬
+    nfdist, nfish = neighbor_fish[0]
 
-            fsize = graph[xx][yy]
-            if fsize > 0 and fsize != 9:  # 물고기가 있는 위치라면
-                if fsize <= ksize:  # 아기상어의 크기보다 작거나 같은 물고기를 neigbor_fish에 담는다.
-                    neigbor_fish.append([fsize, xx, yy])
+    fishes.remove(nfish)
+    graph[nfish[0]][nfish[1]] = 0
+    graph[shark[0]][shark[1]] = 0
+    time += nfdist
+    shark = nfish  # 아기상어의 위치를 물고기 위치로 바꾼다
+    num_ate += 1
 
-        if fishes - ate_fishes <= 0:
-            break  # 엄마 상어에게 도움 요청
+    graph[shark[0]][shark[1]] = 9
+    if num_ate == shark_size:
+        shark_size += 1
+        num_ate = 0
 
-        elif len(neigbor_fish) == 1:
-            nsize, nx, ny = neigbor_fish.pop(0)
-            graph[nx][ny] = 0  # 물고기를 먹어 치운다.
-            ate_fishes += 1  # 먹은 물고기 수
-            if ate_fishes == ksize:  # 아기 상어의 크기와 물고기의 크기가 같은 경우
-                ksize += 1
+    # print(f"shark={shark}({shark_size}), eat={neighbor_fish[0]}, ate={num_ate}")
+    # for x in range(n):
+    #     for y in range(n):
+    #         print(graph[x][y], end=" ")
+    #     print()
 
-            q.append([ksize, kcell + 1, nx, ny])  # 지나친 칸의 개수에 +1
-
-        elif len(neigbor_fish) > 1:
-            closest_fish = []  # 거리가 가까운 물고기 리스트
-            for fish in neigbor_fish:
-                pass
-
-        time += 1
+print(time)
