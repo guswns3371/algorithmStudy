@@ -1,3 +1,6 @@
-a = [1, 2, 3, 4, 5]
-b = [1, 2, 3]
-print(list(set(a) - set(b))) # 리스트 뺘기
+from collections import deque
+
+q = deque([[0,0]])
+
+print( [0,0] in q)
+print( [0,1] in q)
