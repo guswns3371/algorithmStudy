@@ -1,6 +1,16 @@
-from collections import deque
+from bisect import bisect_left, bisect_right, bisect
 
-q = deque([[0,0]])
+nums = [0, 1, 2, 3, 4, 5]
+print(bisect_right(nums, 2))  # 3
+print(bisect_left(nums, 2))  # 2
+print(bisect(nums, 2))  # 3
 
-print( [0,0] in q)
-print( [0,1] in q)
+nums = [0, 1, 3, 3, 4, 5]
+print(bisect_right(nums, 2))  # 2
+print(bisect_left(nums, 2))  # 2
+print(bisect(nums, 2))  # 2
+
+nums = [0, 1, 2, 2, 4, 5]
+print(bisect_right(nums, 2))  # 4
+print(bisect_left(nums, 2))  # 2
+print(bisect(nums, 2))  # 4
