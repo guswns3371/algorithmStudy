@@ -1,16 +1,16 @@
-from bisect import bisect_left, bisect_right, bisect
+a = ['a', 'b', 'c', 'd', 'e']
+print(a)
+for i in range(5):
+    print(f"a[{i}]={a[i]}")
 
-nums = [0, 1, 2, 3, 4, 5]
-print(bisect_right(nums, 2))  # 3
-print(bisect_left(nums, 2))  # 2
-print(bisect(nums, 2))  # 3
+for i in range(6):
+    print(f"a[{-i}]={a[-i]}")
 
-nums = [0, 1, 3, 3, 4, 5]
-print(bisect_right(nums, 2))  # 2
-print(bisect_left(nums, 2))  # 2
-print(bisect(nums, 2))  # 2
-
-nums = [0, 1, 2, 2, 4, 5]
-print(bisect_right(nums, 2))  # 4
-print(bisect_left(nums, 2))  # 2
-print(bisect(nums, 2))  # 4
+print("a[:5]", a[:5])
+print("a[::]", a[::])
+print("a[::-1]", a[::-1])
+for i in range(5):
+    print(f"a[ {i} : ] # {a[i:]}")
+for i in range(1, 6):
+    print(f"a[ {-i} : ] # {a[-i:]}")
+print("a[ -4 : -1 ] # ",a[-4:-1])
