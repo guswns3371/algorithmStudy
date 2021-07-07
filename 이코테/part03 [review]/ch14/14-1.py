@@ -1,3 +1,4 @@
+# 국영수(https://www.acmicpc.net/problem/10825)
 n = int(input())
 data = []
 for i in range(n):
