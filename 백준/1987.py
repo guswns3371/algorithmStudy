@@ -10,7 +10,7 @@ bfs 5332ms
 from collections import deque
 
 
-def dfs(start, count):
+def recursive(start, count):
     global max_num, data
 
     x, y = start
@@ -25,11 +25,11 @@ def dfs(start, count):
             continue
 
         data.append(graph[xx][yy])
-        dfs([xx, yy], count + 1)
+        recursive([xx, yy], count + 1)
         data.remove(graph[xx][yy])
 
 
-def bfs(start):
+def queue(start):
     answer = 1
     a, b = start
     q = deque([(a, b, graph[a][b])])
@@ -61,4 +61,4 @@ for _ in range(r):
 data.append(graph[0][0])
 # dfs([0, 0], 1)
 # print(max_num)
-print(bfs([0, 0]))
+print(queue([0, 0]))
